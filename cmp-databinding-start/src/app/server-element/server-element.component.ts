@@ -41,6 +41,5 @@ export class ServerElementComponent implements OnInit, OnChanges, OnDestroy, DoC
   
   ngOnInit(): void {
     console.log('ngOnInit called!');
-    console.log('Text: ' +this.headers.nativeElement.textContent)
   }
 }
