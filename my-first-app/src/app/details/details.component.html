@@ -1,0 +1,10 @@
+
+
+<button (click)="toggleDetails()">Display Details</button>
+<p  *ngIf="areDetailsVisible">Secret Details</p>
+<div  *ngFor="let item of counterArray, let i=index"
+    [ngStyle]="{backgroundColor: i>=4 ? 'blue': 'white'}" 
+    [ngClass]="{moreThan4: i>=4}"
+>{{item}}</div>
+
+
