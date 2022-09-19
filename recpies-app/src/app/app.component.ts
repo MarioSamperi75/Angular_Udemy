@@ -7,4 +7,9 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'recpies-app';
+  pageDisplayed: string="recipes"
+
+  onChangedPage (page: string) {
+    this.pageDisplayed = page;
+  }
 }
