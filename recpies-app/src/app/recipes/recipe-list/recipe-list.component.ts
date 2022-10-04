@@ -10,7 +10,7 @@ export class RecipeListComponent implements OnInit {
 
   recipes: Recipe[] = [
     new Recipe("Carbonara", "Quello che vuoi ma senza panna", "https://eu-central-1.linodeobjects.com/tasteline/2019/02/spaghetti-carbonara-foto-nurlan-emir-mathem-800x800.jpg"),
-    new Recipe("Ragu alla Bolognese", "In realtà è alla Toscana, ma chi cazzo se ne accorge...","https://www.insidetherustickitchen.com/wp-content/uploads/2017/11/Italian-Beef-Ragu-740px-Inside-the-Rustic-Kitchen-26.jpg" )
+    new Recipe("Ragu alla Bolognese", "In realtà è alla Toscana, ma chi se ne accorge...","https://www.insidetherustickitchen.com/wp-content/uploads/2017/11/Italian-Beef-Ragu-740px-Inside-the-Rustic-Kitchen-26.jpg" )
   ];
 
   @Output() drilledRecipe= new EventEmitter<Recipe>();

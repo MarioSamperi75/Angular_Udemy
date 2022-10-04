@@ -9,13 +9,14 @@ import { Recipe } from '../../recipe.model';
 export class RecipeItemComponent implements OnInit {
 
   @Input() recipe: Recipe;
-  @Output() recipeSelected= new EventEmitter<Recipe>();
+  @Output() recipeSelected= new EventEmitter<void>();
 
   constructor() { }
 
+  // we doesn't nedd to pass anything, we have already the recipes in the list component (see recipe-list)
   selectRecipe ()  {
-    this.recipeSelected.emit(this.recipe);
-    console.log( this.recipe);
+    this.recipeSelected.emit();
+  
   }
 
   ngOnInit(): void {
