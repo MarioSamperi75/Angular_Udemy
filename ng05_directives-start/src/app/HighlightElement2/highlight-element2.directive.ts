@@ -7,7 +7,7 @@ export class HighlightElement2Directive implements OnInit{
 
   @HostBinding('style.backgroundColor') backgroundColor: string;
   @Input() defaultColor: string = 'transparent';
-  @Input() highlightedColor: string = 'blue   ';
+  @Input('appHighlightElement2') highlightedColor: string = 'blue   ';
 
   constructor(private elementRef: ElementRef, private renderer: Renderer2 ) {
    }

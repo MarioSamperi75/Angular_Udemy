@@ -27,9 +27,16 @@
 
       </ul>
       <p appHighlightElement>Test Highlight directive</p>
-      <p appHighlightElement2 defaultColor='yellow' highlightedColor='orange'>Test Highlight directive2</p>
+      <p [appHighlightElement2]="'orange'" [defaultColor]="'yellow'" >Test Highlight directive2</p>
 
-      <!-- you can also write defaultColor='yellow' and higlightedColor='orange' -->
+      <!-- you can also write 
+      <p appHighlightElement2 defaultColor='yellow' highlightedColor='orange'>Test Highlight directive2</p>
+      []="" square brackets syntax requires "" ! Then if you need to pass a string you need extra "" (better '' so angular can distinguish)
+
+        and
+
+      directive name + one properties in the same instruction! just assign the name of the directive as alias to the properties you like!
+      -->
     </div>
   </div>
 </div>
