@@ -6,12 +6,14 @@ import {HighlightElement} from "./HighLightElement/HighlightElement";
 
 import { AppComponent } from './app.component';
 import { HighlightElement2Directive } from './HighlightElement2/highlight-element2.directive';
+import { UnlessDirective } from './HighlightElement2/unless.directive';
 
 @NgModule({
   declarations: [
     AppComponent,
     HighlightElement,
-    HighlightElement2Directive
+    HighlightElement2Directive,
+    UnlessDirective
     
   ],
   imports: [
