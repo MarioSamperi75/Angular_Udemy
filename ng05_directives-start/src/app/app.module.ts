@@ -5,11 +5,13 @@ import {HighlightElement} from "./HighLightElement/HighlightElement";
 
 
 import { AppComponent } from './app.component';
+import { HighlightElement2Directive } from './HighlightElement2/highlight-element2.directive';
 
 @NgModule({
   declarations: [
     AppComponent,
-    HighlightElement
+    HighlightElement,
+    HighlightElement2Directive
     
   ],
   imports: [
