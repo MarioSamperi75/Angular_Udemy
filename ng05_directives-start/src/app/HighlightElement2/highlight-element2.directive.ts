@@ -1,4 +1,4 @@
-import { Directive, ElementRef, OnInit, Renderer2 } from '@angular/core';
+import { Directive, ElementRef, HostListener, OnInit, Renderer2 } from '@angular/core';
 
 @Directive({
   selector: '[appHighlightElement2]'
@@ -9,9 +9,16 @@ export class HighlightElement2Directive implements OnInit{
 
    }
   ngOnInit() {
+   
+  }
+
+ // you can use all dom events
+ // for a list visit:  https://www.w3schools.com/jsref/dom_obj_event.asp
+  @HostListener('mouseenter') addStyle(eventData: Event) {
     this.renderer.setStyle(this.elementRef.nativeElement, 'background-color', 'orange')
   }
 
- 
-
+  @HostListener('mouseleave') removeStyle(eventData: Event) {
+    this.renderer.setStyle(this.elementRef.nativeElement, 'background-color', 'transparent')
+  }
 }
