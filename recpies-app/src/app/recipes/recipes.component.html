@@ -5,10 +5,10 @@
         <!-- we can also set logic in the template (drilledRecipe)="receivedRecipe = $event" 
             and we skip the method onRecipeReceived in recipe.component.ts,  
             because we use it just to pass data-->
-        <app-recipe-list (drilledRecipe)="onRecipeReceived($event)"></app-recipe-list>
+        <app-recipe-list></app-recipe-list>
     </div>
     <div class="col-md-6">
-        <app-recipe-detail *ngIf="receivedRecipe; else infoText" [recipe]="receivedRecipe" ></app-recipe-detail>
+        <app-recipe-detail *ngIf="selectedRecipe; else infoText" [recipe]="selectedRecipe" ></app-recipe-detail>
         <ng-template #infoText>
             <p>Please select a recipe!</p>
         </ng-template>
