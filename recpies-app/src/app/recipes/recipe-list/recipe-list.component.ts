@@ -1,5 +1,6 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Recipe } from '../recipe.model';
+import { RecipeService } from '../recipe.service';
 
 @Component({
   selector: 'app-recipe-list',
@@ -8,14 +9,11 @@ import { Recipe } from '../recipe.model';
 })
 export class RecipeListComponent implements OnInit {
 
-  recipes: Recipe[] = [
-    new Recipe("Carbonara", "Quello che vuoi ma senza panna", "https://eu-central-1.linodeobjects.com/tasteline/2019/02/spaghetti-carbonara-foto-nurlan-emir-mathem-800x800.jpg"),
-    new Recipe("Ragu alla Bolognese", "In realtà è alla Toscana, ma chi se ne accorge...","https://www.insidetherustickitchen.com/wp-content/uploads/2017/11/Italian-Beef-Ragu-740px-Inside-the-Rustic-Kitchen-26.jpg" )
-  ];
+  recipes: Recipe[];
 
   @Output() drilledRecipe= new EventEmitter<Recipe>();
 
-  constructor() { }
+  constructor(private recipeService: RecipeService) { }
 
   onRecipeSelected (sentRecipe: Recipe) {
     console.log ("InListComponent");
@@ -31,6 +29,9 @@ export class RecipeListComponent implements OnInit {
   } */
 
   ngOnInit(): void {
+    this.recipes = this.recipeService.getRecipes(); 
   }
+
+ 
 
 }
