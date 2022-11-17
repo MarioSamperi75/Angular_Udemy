@@ -19,4 +19,13 @@ export class ShoppingListService {
         this.changedIngredients.emit(this.ingredients.slice());
       }
 
+      addIngredientsFromRecipe(newIngredients: Ingredient[]){
+        this.ingredients.push(...newIngredients)
+        this.changedIngredients.emit(this.ingredients.slice());
+
+        //for (let ingredient of ingredients) {
+        //  this.addIngredient(ingredient);
+        //}
+      }
+
 }
