@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Params } from '@angular/router';
 
 @Component({
   selector: 'app-user',
@@ -16,6 +16,18 @@ export class UserComponent implements OnInit {
       id: this.route.snapshot.params['id'], 
       name: this.route.snapshot.params['name'], 
     }
-  }
 
+  // if you have already initialized the component
+  // incoming changes in the parameter will not updated in the body of the page
+  // e.g. link with programmatic navigation
+  // in this case let's use an observable
+  // route.params is an observable. route.snapshot.params is not.
+    this.route.params
+      .subscribe(
+        (params: Params) => {
+          this.user.id = params['id'];
+          this.user.name = params['name'];
+        }
+      );
+  }
 }
