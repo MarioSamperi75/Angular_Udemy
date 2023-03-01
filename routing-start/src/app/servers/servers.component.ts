@@ -20,7 +20,6 @@ export class ServersComponent implements OnInit {
   }
 
   onReload() {
-    console.log("ONRELOADFUNKAR!!!")
     // navigate using relative path :the default is the root
     // != routingLink. routingLink as the actual path as default
     // to set the actual path please inject ActivatedRoute and use relativeTo
