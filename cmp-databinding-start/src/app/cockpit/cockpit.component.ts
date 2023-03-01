@@ -33,4 +33,8 @@ export class CockpitComponent implements OnInit {
       serverContent:this.serverContentInput.nativeElement.value 
     })
   }
+
+  onProva(event) {
+    console.log("Prova: " + event.target.value);
+  }
 }
