@@ -1,15 +1,18 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { ActivatedRoute, Params } from '@angular/router';
+import { Subscription } from 'rxjs/Subscription';
 
 @Component({
   selector: 'app-user',
   templateUrl: './user.component.html',
   styleUrls: ['./user.component.css']
 })
-export class UserComponent implements OnInit {
+export class UserComponent implements OnInit, OnDestroy {
   user: {id: number, name: string};
+  paramsSubscription : Subscription;
 
   constructor(private route: ActivatedRoute) { }
+
 
   ngOnInit() {
     this.user = {
@@ -22,7 +25,7 @@ export class UserComponent implements OnInit {
   // e.g. link with programmatic navigation
   // in this case let's use an observable
   // route.params is an observable. route.snapshot.params is not.
-    this.route.params
+    this.paramsSubscription = this.route.params
       .subscribe(
         (params: Params) => {
           this.user.id = params['id'];
@@ -30,4 +33,11 @@ export class UserComponent implements OnInit {
         }
       );
   }
+  // Angular unsubscribes automatically, 
+  // but for your own observables you have to
+  ngOnDestroy(): void {
+    this.paramsSubscription.unsubscribe();
+  }
+
+  
 }
