@@ -16,11 +16,11 @@ export class ServerComponent implements OnInit {
   ngOnInit() {
     //we have to pass the param as a number (+)
     this.server = this.serversService.getServer(+this.route.snapshot.params['id']);
- /*    this.route.params
+     this.route.params
     .subscribe(
       (params: Params) =>
-      this.server = this.serversService.getServer(+this.route.snapshot.params['id'])
-    ) */
+      this.server = this.serversService.getServer(+params['id'])
+    ) 
   }
 
 
