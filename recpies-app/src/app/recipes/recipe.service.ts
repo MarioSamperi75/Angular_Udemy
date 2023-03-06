@@ -35,4 +35,8 @@ export class RecipeService {
       //slice to return a new array, a copy, to not have direct access
     }
 
+    getRecipe(id : number) {
+      return this.recipes[id];
+    }
+
 }
