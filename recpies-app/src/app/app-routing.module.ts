@@ -8,20 +8,14 @@ const appRoutes : Routes = [
     { path:"recipes", component: RecipesComponent} ,
     { path:"shopping-list", component: ShoppingListComponent} 
 ]
-
-
-
 @NgModule(
     {
         imports: [RouterModule.forRoot(appRoutes)],
         exports: [RouterModule]
-    
     }
 )
 
 export class AppRoutingModule {
-
-
 };
 
 
