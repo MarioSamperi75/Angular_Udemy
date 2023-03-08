@@ -21,7 +21,7 @@ export class UserComponent implements OnInit {
   }
 
   activationHandler(status: boolean) {
-    this.userService.activateEmitter.emit(status);
+    this.userService.activateEmitter.next(status);
     }
 
 }
