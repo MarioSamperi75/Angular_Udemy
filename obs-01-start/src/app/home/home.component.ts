@@ -8,30 +8,40 @@ import { interval, Observable, Subscription } from 'rxjs';
 })
 export class HomeComponent implements OnInit, OnDestroy {
   customInternalObservableSubscription: Subscription;
-  private interval: any; 
+  private interval: any;
   constructor() {}
 
   ngOnInit() {
-/*       this.firtObsSubs = interval(1000).subscribe((count) => {
+    /*       this.firtObsSubs = interval(1000).subscribe((count) => {
       console.log(count);
     }); */
     let count = 0;
-    const customInternalObservable = new Observable<number>( observer => {
-      this.interval = setInterval( () => {
-        console.log("observable: " + count)
+    const customInternalObservable = new Observable<number>((observer) => {
+      this.interval = setInterval(() => {
+        console.log('interval: ' + count);
         observer.next(count++);
-        if (count>3){
-          observer.error(new Error("Counter is greater than 3!!!"))
+        if (count === 3) {
+          observer.complete();
+        }
+        if (count > 5) {
+          observer.error(new Error('Counter is greater than 3!!!'));
         }
       }, 1000);
-    })
-    
-    this.customInternalObservableSubscription = customInternalObservable.subscribe( (data) => {
-      console.log("observer: " + data)
-    }, error => {
-      console.log(("observer: " + error));
-      alert(error.message);
-    })
+    });
+
+    this.customInternalObservableSubscription =
+      customInternalObservable.subscribe(
+        (data) => {
+          console.log('observer: ' + data);
+        },
+        (error) => {
+          console.log('observer: ' + error);
+          alert(error.message);
+        },
+        () => {
+          console.log('Complete!!');
+        }
+      );
   }
 
   ngOnDestroy(): void {
