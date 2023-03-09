@@ -12,7 +12,9 @@
               ngModel
               name="username"
               required
+              #name="ngModel"
             />
+            <div class="help-block" *ngIf="!name.valid && name.touched">The username field cannot be empty.</div>
           </div>
           <button class="btn btn-default" type="button">
             Suggest an Username
