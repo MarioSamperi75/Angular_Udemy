@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
 import { NgForm } from '@angular/forms';
 
 @Component({
@@ -7,12 +7,19 @@ import { NgForm } from '@angular/forms';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+  // useful you you need to get the values before submitting
+  @ViewChild('form') signupForm: NgForm;
+
   suggestUserName() {
     const suggestedName = 'Superuser';
   }
 
-  onSubmit(form: NgForm){
-    console.log(form.value);
+  // onSubmit(form: NgForm){
+  //   console.log(form.value);
+  // }
+
+  onSubmit() {
+    console.log(this.signupForm.value);
   }
 
 
