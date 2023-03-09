@@ -10,6 +10,7 @@ export class AppComponent {
   // useful you you need to get the values before submitting
   @ViewChild('form') signupForm: NgForm;
   defaultValue: string = "pet";
+  answer: string = "";
 
   suggestUserName() {
     const suggestedName = 'Superuser';
