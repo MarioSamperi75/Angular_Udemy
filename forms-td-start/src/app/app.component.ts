@@ -60,6 +60,10 @@ export class AppComponent {
       answer: this.signupForm.value.answer
     }
     this.submitted = true;
+
+    // not just cleaning 
+    // that will also set the torm back to untouched
+    this.signupForm.reset();
   }
 
 
