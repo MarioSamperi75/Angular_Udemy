@@ -7,7 +7,9 @@ import { NgForm } from '@angular/forms';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  // useful you you need to get the values before submitting
+  genders = ['male', 'female'];
+  defaultGender = 'male';
+  // useful if you need to get values before submitting
   @ViewChild('form') signupForm: NgForm;
   defaultValue: string = "pet";
   answer: string = "";
