@@ -23,6 +23,14 @@ export class AppComponent implements OnInit{
       'gender' : new FormControl('male'),
       'hobbies' : new FormArray([])
     });
+
+    this.signupForm.valueChanges.subscribe(
+      (value) => console.log(value.userData.username)
+    )
+
+    this.signupForm.statusChanges.subscribe(
+      (value) => console.log(value)
+    )
   }
 
   onSubmit(){
@@ -39,7 +47,6 @@ export class AppComponent implements OnInit{
   }
 
   forbiddenNames(control: FormControl): {[s: string]: boolean} {
-    console.log("Prova: " + this.forbiddenUsernames.indexOf(control.value));
     if (this.forbiddenUsernames.indexOf(control.value) !== -1) {
       return {'nameIsForbidden' : true};
     }
