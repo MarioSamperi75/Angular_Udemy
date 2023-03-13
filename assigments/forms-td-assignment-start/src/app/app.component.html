@@ -58,17 +58,13 @@
             />
             <p *ngIf="!password.valid && password.touched">Password Form is not valid</p> 
           </div>
-          
-
         </div>
         <p *ngIf="!form.valid && form.touched">Form is not valid</p>
 
         
         <!--
            4) A Submit Button
-
            Display a warning message if the Form is invalid AND was touched. Display a warning message below each input if it's invalid.
-
            Upon submitting the form, you should simply print the Value of the Form to the Console.
            Optionally, display it in your template.
         -->
